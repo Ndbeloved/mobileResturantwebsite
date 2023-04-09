@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css"/>
+    <script src='jQuery\jquery.js'></script>
+</head>
+<body>
+    
+    <header>
+
+        <!--nav bar section-->
+        <div id="navbar-avatar">
+            <div id="navbar">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!--avatar-->
+            <div id="avatar">
+                <img src="Image/user.png"/>
+            </div>
+        </div>
+
+        <!--Welcome text section-->
+        <div id="searchbar">
+            <div id="welcome-text">
+                <div id="text">
+                    <p>
+                        Hi, Terance<br>
+                        <span>Welcome Back!</span>
+                    </p>
+                </div>
+            </div>
+
+            <div id="searchbar-input">
+                <input placeholder="search here" type="search">
+            </div>
+        </div>
+    </header>
+
+
+    <!--Food Category secion-->
+
+    <section class="food-category" id="sec_1">
+        <div id="text">
+            <p>Food category</p>
+            <a href="#">see all</a>
+        </div>
+
+        <div id="slide-container">
+            <div class="active" id="food">
+                <img src="Image/Ham.png">
+                <p id="food-name">Hamburger</p>
+            </div>
+
+            <div class="fries-cate" id="food">
+                <img src="Image/Fries.png">
+                <p id="food-name">Fries</p>
+            </div>
+
+            <div class="pizza-cate" id="food">
+                <img src="Image/pizza.png">
+                <p id="food-name">Pizza</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Popular food section-->
+
+    <section class="popular-category">
+
+        <!--Header of popular food section-->
+        <div id="text">
+            <p>Popular</p>
+        </div>
+
+        <!--popular food flex-->
+        <div id="popular-food-flex">
+
+            <!--Burgars-->
+            <div class="food-card visible">
+                <p>Cheese Burger</p>
+                <img src="Image/Ham.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$5.00</p>
+                    <div class="add-to-cart" data-price="5.00" data-food-image="Image/Ham.png" data-food-name="Cheese Burger"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card visible">
+                <p>Classic Burger</p>
+                <img src="Image/Ham.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$2.50</p>
+                    <div class="add-to-cart"data-price="2.50" data-food-image="Image/Ham.png" data-food-name="Classic Burger"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card visible">
+                <p>Cheese Burger</p>
+                <img src="Image/Ham.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$3.00</p>
+                    <div class="add-to-cart" data-price="3.00" data-food-image="Image/Ham.png" data-food-name="Cheese Burger"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card visible">
+                <p>vegi Burger</p>
+                <img src="Image/Ham.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$1.50</p>
+                    <div class="add-to-cart" data-price="1.50" data-food-image="Image/Ham.png" data-food-name="Vegi Burger"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+
+
+
+
+            <!--Fries-->
+
+
+            <div class="food-card fries">
+                <p>Crinkle-cut fries</p>
+                <img src="Image/Fries.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$1.00</p>
+                    <div class="add-to-cart" data-price="1.00" data-food-image="Image/Fries.png" data-food-name="Crinkle-cut Fries"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card fries">
+                <p>Curly fries</p>
+                <img src="Image/Fries.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$2.50</p>
+                    <div class="add-to-cart" data-price="2.50" data-food-image="Image/Fries.png" data-food-name="Curly Fries"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card fries">
+                <p>Streak Fries</p>
+                <img src="Image/Fries.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$3.00</p>
+                    <div class="add-to-cart" data-price="3.00" data-food-image="Image/Fries.png" data-food-name="Streak Fries"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card fries">
+                <p>Tater Tots</p>
+                <img src="Image/Fries.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$1.50</p>
+                    <div class="add-to-cart" data-price="1.50" data-food-image="Image/Fries.png" data-food-name="Tater Tots"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+
+
+
+            
+            <!--Pizza-->
+
+
+            <div class="food-card pizza">
+                <p>chicken pizza</p>
+                <img src="Image/pizza.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$4.00</p>
+                    <div class="add-to-cart" data-price="4.00" data-food-image="Image/pizza.png" data-food-name="Chicken Pizza"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card pizza">
+                <p>Beef Pizza</p>
+                <img src="Image/pizza.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$3.50</p>
+                    <div class="add-to-cart" data-price="3.50" data-food-image="Image/pizza.png" data-food-name="Beef Pizza"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card pizza">
+                <p>Pepperroni Pizza</p>
+                <img src="Image/pizza.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$5.00</p>
+                    <div class="add-to-cart" data-price="5.00" data-food-image="Image/pizza.png" data-food-name="Pepperroni Pizza"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+            <div class="food-card pizza">
+                <p>Corn dog Pizza</p>
+                <img src="Image/pizza.png" id="food-card-image"/>
+                <div id="add-cart-container">
+                    <p id="price">$6.50</p>
+                    <div class="add-to-cart" data-price="6.50" data-food-image="Image/pizza.png" data-food-name="Corn dog Pizza"><img src="Image/x-mark-xl.png"></div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </section>
+
+
+    <!--Hamburger Menu-->
+    <section id="hamburger-menu">
+        <div id="menu-container">
+            <ul>
+                <li class="current-select">Home</li>
+                <li>Favorites</li>
+                <li id="linkCart">Cart</li>
+                <li id='linkAccount'>Account</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!--Details Section-->
+    <section class="Detail">
+
+
+        
+        <!--nav, back button-->
+        <div id="detail-nav">
+            <img src="Image/arrow back.png" id="back-btn-details"/>
+            <p>Detail</p>
+        </div>
+
+        <!--Image of detail-->
+        <div id="detail-image">
+            <img src="Image/Ham.png"/>
+        </div>
+
+        <!--Price and name-->
+        <div id="price-and-name">
+            <div id="food-name-detail"><p>Classic Burger</p></div>
+            <div id="food-price"><p>$2.55</p></div>
+        </div>
+
+        <!--Description-->
+        <div id="detail-description">
+            <h3>Description</h3>
+            <div id="detail-description-text">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis natus fugit, 
+                    eligendi provident nisi distinctio dicta corrupti explicabo dolores quam maiores 
+                    voluptatibus temporibus totam, quibusdam fuga repellendus venia.
+                </p>
+            </div>
+        </div>
+
+        <!--Order button section-->
+        <div id="order-btn-section">
+            <div id="no-of-orders"></div>
+            <div id="order-btn">
+                <div id="detail-cart">
+                    <img src="Image/cart.png"/>
+                </div>
+                <div id="order-btn-btn"><p>Order Now</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!--Added to cart popup-->
+    <section class="added_to_cart">
+
+        <div id="popup-cont">
+            <img src="Image/success.png"/>
+            <p>Added to cart</p>
+        </div>
+    </section>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--------------------------------Js SECTION/ JQUERY--------------------------------->
+
+    <script>
+
+
+        $(document).ready(function(){
+
+            //Hamburger Menu State
+            var menu_state = false; //false
+
+            //Hides added to cart popup initially
+            $('.added_to_cart').hide(0);
+
+            //Hides Menu section initially
+            $('#hamburger-menu').hide(0);
+
+            //hides the fries and pizza section initially
+            $(".fries").hide(0);
+            $(".pizza").hide(0);
+
+            //Opens Menu Section
+
+            $('#navbar').click(function(){
+                $('#hamburger-menu').show(200);
+                $('section:not(#hamburger-menu),header').css('filter','blur(3px)');
+                menu_state = true; //True
+            });
+
+            //Closes Menu Section
+            var page_body = document.getElementById("sec_1");
+            $('body').click(function(){
+                if(menu_state){
+                    $('body').mousemove(function(e){
+                        const {x, y} = page_body.getBoundingClientRect();
+                        if (e.clientX > 150){
+                            $('#hamburger-menu').hide(200);
+                            $('section:not(#hamburger-menu),header').css('filter','none');
+                            menu_state = false;
+                        };
+                    });
+                }
+            });
+
+            
+            
+            //closes menu section
+            
+
+
+
+
+            //hamburger section click
+            $(".active").click(function(){
+                $(".visible").show(0);
+                $(".fries").hide(0);
+                $(".pizza").hide(0);
+                
+                //changing backround to active and text color
+                $(this).css("background-color", "#31a831"); 
+                $(".active p").css("color","#fff"); 
+
+                //changing others to inactive
+                $(".fries-cate").css("background-color","#fff");
+                $(".fries-cate p").css("color","#3a3a3a");
+
+                $(".pizza-cate").css("background-color","#fff");
+                $(".pizza-cate p").css("color","#3a3a3a");
+            });
+
+            //fries section click
+            $(".fries-cate").click(function(){
+                $(".visible").hide(0);
+                $(".fries").show(0);
+                $(".pizza").hide(0);
+
+                //changing backround to active and text color
+                $(this).css("background-color", "#31a831"); 
+                $(".fries-cate p").css("color","#fff"); 
+
+                //changing others to inactive
+                $(".active").css("background-color","#fff");
+                $(".active p").css("color","#3a3a3a");
+
+                $(".pizza-cate").css("background-color","#fff");
+                $(".pizza-cate p").css("color","#3a3a3a");
+            })
+
+
+            //pizza section click
+            $(".pizza-cate").click(function(){
+                $(".visible").hide(0);
+                $(".fries").hide(0);
+                $(".pizza").show(0);
+
+                //changing backround to active and text color
+                $(this).css("background-color", "#31a831"); 
+                $(".pizza-cate p").css("color","#fff"); 
+
+                //changing others to inactive
+                $(".active").css("background-color","#fff");
+                $(".active p").css("color","#3a3a3a");
+
+                $(".fries-cate").css("background-color","#fff");
+                $(".fries-cate p").css("color","#3a3a3a");
+            })
+
+
+
+
+
+
+
+            //hide details initially
+            $(".Detail").hide(0);
+
+            //Details back-function
+            $("#back-btn-details").click(function(){
+                $(".Detail").hide(0);
+            });
+
+            //Details open-function
+            $(".add-to-cart").click(function(){
+                $(".Detail").show(0);
+                var x = $(".Detail #detail-image").html();
+                console.log(x)
+            });
+
+
+            //Shows specific items that has been clicked
+            var globalPrice = 'string';
+            var globalfoodName = 'string';
+            var globalfoodImage = 'string';
+
+            document.querySelectorAll('.add-to-cart').forEach(e => {
+                e.onclick = function(){
+                    var price = $(this).data('price');
+                    globalPrice = price;
+                    var foodName = $(this).data('foodName');
+                    globalfoodName = foodName;
+                    var foodimage = $(this).data('foodImage');
+                    globalfoodImage = foodimage;
+
+                    document.querySelector('#food-price').innerHTML= '<p>$'+price+'</p>';
+                    document.querySelector('#food-name-detail').innerHTML= '<p>'+foodName+'</p>';
+                    document.querySelector('#detail-image').innerHTML= "<img src='"+foodimage+"'/>";
+
+                };
+            });
+
+            //Stores order in localStorage
+            $('#detail-cart').click(function(){
+
+                var id = localStorage.length;
+                var leng = id +1;
+                var items = {'name': globalfoodName, 'price':globalPrice, 'image':globalfoodImage };
+                localStorage.setItem("order"+id, JSON.stringify(items));
+                localStorage.setItem('lenght', leng);
+
+
+                $('.added_to_cart').show(0);
+                $('section:not(.added_to_cart)').css('filter','blur(5px)');
+                setTimeout(function(){
+                    $('.added_to_cart').hide(0);
+                    $('section:not(.added_to_cart)').css('filter','none');
+                },2000);
+            });
+
+            //Redirects to cart page onclick link
+
+            $('#linkCart').click(function(){
+                window.location.href = 'cart.html';
+            });
+
+            //Redirects to account page onclick link
+
+            $('#linkAccount').click(function(){
+                window.location.href = 'account.html';
+            });
+            
+            
+        })
+    </script>
+
+</body>
+</html>

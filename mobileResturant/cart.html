@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css"/>
+    <script src='jQuery\jquery.js'></script>
+</head>
+<body>
+
+    <section class="header">
+        <div id="back-btn" onclick="history.back();">
+            <img src="Image/arrow back.png" />
+        </div>
+        <div id="heading-text">
+            <p>Shopping Cart</p>
+        </div>
+    </section>
+
+
+    <!--Total Container-->
+    <section class="total-fixed-bottom">
+
+        <!--Checkout total-->
+        <div id="total-text">
+            <p>Total</p>
+            <div id="total-no-cont">
+                <p>$<span id="total">0.00</span></p>
+            </div>
+        </div>
+
+        <!--Checkout Button-->
+        <div id="checkout-btn-cont">
+            <div id="checkout-btn"><p>Checkout</p></div>
+        </div>
+    </section>
+
+    <section class="ordered-items-cont">
+        <!--<div class="ordered-food-card">
+            <img src="Image/Ham.png"/>
+            <p class="orderName">Hamburger</p>
+            <p class="price-p">$<span id="price">2.99</span></p>
+            <div id="remove"><p>Remove</p></div>
+        </div>-->
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!--Script-->
+
+    <script>
+
+        $(document).ready(function(){
+
+            var totalPrice = 0;
+
+            var localStorage_length = parseInt(localStorage.getItem('lenght'));
+
+            //Creates Div Elements and assigns Ordered Food Items From localStorage
+            
+            for (var i=0; i<localStorage_length; i++){
+                //var Food =
+                //console.log('json file: ' +JSON.parse(localStorage.getItem('order'+i))) ;
+                
+                if(JSON.parse(localStorage.getItem('order'+i)) !== null){
+                    //console.log('available')
+                    var Food = JSON.parse(localStorage.getItem('order'+i));
+
+
+                    var order = document.createElement('Div');
+                    order.className = "ordered-food-card";
+                    order.id = "food-card"+i;
+                    $('.ordered-items-cont').append(order);
+                    
+                    
+                    
+                    var food_name = Food.name;
+                    var food_image = Food.image;
+                    var food_price = Food.price;
+
+                    //console.log('name: '+food_name+' image: '+food_image+' price: '+food_price);
+                    totalPrice = totalPrice + parseFloat(food_price);
+
+                    var order_image = document.createElement('img');
+                    order_image.src = food_image;
+
+                    //Creating the p tag, inputing id and changing innerHtml to food name
+                    var order_food_name = document.createElement('p');
+                    order_food_name.className = 'orderName';
+                    order_food_name.innerHTML = food_name;
+
+                    //Creating, updating p tag that contains the price
+                    var order_food_price = document.createElement('p');
+                    order_food_price.innerHTML='$';
+                    order_food_price.className = 'price-p';
+            
+                    //Updating and creating Span to contain the price
+                    var order_food_priceSpan = document.createElement('span');
+                    order_food_priceSpan.id = 'price';
+                    order_food_priceSpan.innerHTML = food_price;
+
+                    //Remove Button
+                    var removeOrder = document.createElement('div');
+                    removeOrder.id='remove';
+                    //removeOrder.className = 'order'+i;
+                    removeOrder.innerHTML = "<p class='order"+i+"'>Remove</p>";
+
+
+                    //targeting the unique id's created
+                    var targeted_id = '#food-card'+i;
+        
+                    $(targeted_id).append(order_image);
+                    $(targeted_id).append(order_food_name);
+                    $(targeted_id).append(order_food_price);
+                    $(targeted_id+' .price-p').append(order_food_priceSpan);
+                    $(targeted_id).append(removeOrder);
+
+
+                    //var domprice = $('.price-p span');
+                    //domprice.innerHTML=food_price;
+
+                    //var domFoodName = $('.orderName');
+                    //domFoodName.innerHTML = food_name;
+
+                    
+                
+                
+                    //console.log('total price: '+totalPrice);
+
+                    var change_total = document.querySelector('#total');
+                    change_total.innerHTML = totalPrice;
+
+                }
+                else{
+                    var x='hey';
+                }
+            };
+
+
+            $('#remove p').click(function(){
+                $(this).css('color','tomato');
+                localStorage.removeItem(this.className);
+                location.reload();
+            });
+               
+        });
+    </script>
+    
+</body>
+</html>

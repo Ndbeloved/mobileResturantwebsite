@@ -1,0 +1,433 @@
+:root{
+    --background:#e7e7e7;
+    --secondary: #31a831;
+}
+
+@font-face{
+    font-family:"custom";
+    src: url('font/Montserrat-Light.otf')
+}
+@font-face{
+    font-family: "bold";
+    src: url('font/Montserrat-Bold.otf')
+}
+
+*{
+    margin:0; 
+    padding:0;
+    font-family: "custom";
+}
+
+body{
+    background: #e7e7e7;
+}
+
+
+header{
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    height:40vh;
+    max-height: 270px;
+    width: 100%;
+    background: var(--background);
+}
+
+header #navbar-avatar{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+}
+
+header #navbar-avatar #navbar{
+    position: absolute;
+    left:0px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+header #navbar-avatar #navbar div{
+    height: 3px;
+    width:30px;
+    background: #4b4b4b;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+header #navbar-avatar #navbar div:nth-of-type(2){
+    width:20px;
+}
+
+header #navbar-avatar #avatar img{
+    height: 35px;
+    width:35px;
+    border-radius: 50%;
+}
+header #navbar-avatar #avatar{
+    position: absolute;
+    right:20px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+header #searchbar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    margin-left:5%;
+}
+
+header #searchbar #text p{
+    font-size: 18px;
+    color:#464545;
+    line-height: 30px;
+}
+
+header #searchbar #text p span{
+    font-family:"bold";
+    font-size: 20px;
+    color:black;
+}
+
+header #searchbar-input input{
+    padding: 15px 15px;
+    border-radius: 5px;
+    border: none;
+    width:100%;
+    outline: none;
+}
+header #searchbar-input{
+    margin-top: 10px;
+}
+
+.food-category{
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: fit-content;
+    width: 90%;
+    background: var(--background);
+    margin-left: 5%;
+}
+
+.food-category #text{
+    display: flex;
+    position: relative;
+    padding-top: 20px;
+}
+
+.food-category #text p{
+    font-family: "bold";
+    font-weight: 700;
+}
+
+.food-category #text a{
+    position: absolute;
+    right:0px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.food-category #slide-container{
+    overflow: scroll;
+    display: flex;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: fit-content;
+    margin-top: 7px;
+}
+
+/*removing scroll bar from food sroller*/
+.food-category #slide-container::-webkit-scrollbar{
+    display: none;
+}
+
+.food-category #slide-container div#food{
+    display: grid;
+    position: relative;
+    grid-template-columns: 50px 1fr;
+    min-width: 60%;
+    align-items: center;
+    scroll-snap-align: center;
+    margin-right: 10px;
+    border-radius: 15px;
+    background: #fff;
+}
+
+.food-category #slide-container div#food.active{
+    background-color: #31a831;
+}
+
+.food-category #slide-container div#food.active p{
+    color:#fff;
+}
+
+.food-category #slide-container div#food img{
+    height:30px;
+    width: 30px;
+    padding: 10px;
+}
+.food-category #slide-container div#food p{
+    color:#3a3a3a;
+    font-family: "bold";
+    margin-left: 10px;
+}
+
+.popular-category{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.popular-category #text{
+    margin-top: 30px;
+}
+
+.popular-category #text p{
+    font-family: "bold";
+    font-weight: bolder;
+    color: #161616;
+}
+
+.popular-category #popular-food-flex{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+}
+
+.popular-category #popular-food-flex .food-card:nth-child(odd){
+    margin-right: 4%;
+}
+.popular-category #popular-food-flex .food-card{
+    position: relative;
+    width: 48%;
+    height: 200px;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50px 1fr 40px;
+    overflow: hidden;
+}
+
+.popular-category #popular-food-flex .food-card p{
+    font-weight: bolder;
+    padding: 10px 15px;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+.popular-category #popular-food-flex .food-card img{
+    width:100%;
+    height: 100%;
+}
+
+.popular-category #popular-food-flex .food-card #add-cart-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    align-items: center;
+}
+
+.popular-category #popular-food-flex .food-card #add-cart-container div{
+    height: 100%;
+    width:100%;
+    background: var(--secondary);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.popular-category #popular-food-flex .food-card #add-cart-container p{
+    font-family: "bold";
+}
+
+.popular-category #popular-food-flex .food-card #add-cart-container div img{
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+}
+
+
+
+
+/*Details section*/
+
+section.Detail{
+    display: grid;
+    position: fixed;
+    grid-template-rows: 80px 1fr 50px 150px 120px;
+    top:0px;
+    left:0px;
+    height: 100vh;
+    width:100%;
+    background: #e0e0e0;
+}
+
+.Detail #detail-nav{
+    position: relative;
+}
+
+.Detail #detail-nav img{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+
+.Detail #detail-nav p{
+    font-family: "bold";
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.Detail #detail-image img{
+    max-height: 100%;
+    max-width: 100%;
+}
+.Detail #price-and-name{
+    position: relative;
+}
+
+.Detail #price-and-name #food-name-detail p{
+    position: absolute;
+    left:20px;
+    top:50%;
+    transform: translateY(-50%);
+    font-family: "bold";
+}
+
+.Detail #price-and-name #food-price p{
+    position: absolute;
+    right: 20px;
+    top:50%;
+    transform: translateY(-50%);
+    font-family: "bold";
+    color:var(--secondary);
+}
+
+.Detail #detail-description h3{
+    font-family: "bold";
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+.Detail #detail-description #detail-description-text p{
+    padding: 0px 20px;
+    font-size: 12px;
+    color: #505050;
+    line-height: 20px;
+}
+
+.Detail #order-btn-section{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.Detail #order-btn-section #order-btn{
+    position: relative;
+}
+
+.Detail #order-btn-section #order-btn #detail-cart{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #31a831;
+    border-radius: 5px;
+    left:20px;
+    display: grid;
+    place-items: center;
+}
+
+.Detail #order-btn-section #order-btn #detail-cart img{
+    height: 25px;
+    width: 25px;
+}
+
+.Detail #order-btn-section #order-btn #order-btn-btn{
+    display: grid;
+    height: 50px;
+    width: 60%;
+    border-radius: 5px;
+    background: #31a831;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    place-items: center; 
+}
+
+.Detail #order-btn-section #order-btn #order-btn-btn p{
+    font-family: "bold";
+    color: #e0e0e0;
+    font-size: 15px;
+}
+
+#hamburger-menu{
+    position: fixed;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:150px;
+    background: #fff;
+}
+
+#hamburger-menu #menu-container{
+    display: grid;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    position: relative;
+    top:100px
+}
+
+#hamburger-menu #menu-container li{
+    list-style: none;
+    color: #3a3a3a;
+    font-family: "bold";
+    line-height: 40px;
+    padding: 10px 15px;
+}
+
+#hamburger-menu #menu-container li.current-select{
+    color:var(--secondary)
+}
+
+.added_to_cart{
+    position: fixed;
+    top:50vh;
+    left:50vw;
+    transform: translate(-50%,-50%);
+}
+
+.added_to_cart #popup-cont{
+    display: grid;
+    grid-template-rows: 1fr 40px;
+    height: 120px;
+    width: 150px;
+    background: #0a0a0a;
+    border-radius: 15px;
+    place-items: center;
+}
+
+.added_to_cart #popup-cont img{
+    height: 50px;
+    width: auto;
+}
+
+.added_to_cart #popup-cont p{
+    font-family: "bold";
+    color:#e7e7e7;
+}
+
+/*section:not(.added_to_cart){
+    filter: blur(5px);
+}*/
